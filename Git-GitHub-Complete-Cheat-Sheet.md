@@ -89,16 +89,6 @@ See commit history:
 git log
 ```
 
-Compact commit history:
-```bash
-git log --oneline
-```
-
-Show detailed info about the latest commit:
-```bash
-git show
-```
-
 View unstaged changes:
 ```bash
 git diff
@@ -109,36 +99,6 @@ View staged changes:
 git diff --staged
 ```
 
----
-
-## 🧽 Undoing Changes
-
-Discard changes in a file:
-```bash
-git restore filename
-```
-
-Unstage a file:
-```bash
-git reset filename
-```
-
-Undo last commit but keep changes staged:
-```bash
-git reset --soft HEAD~1
-```
-
-Undo last commit and unstage changes:
-```bash
-git reset --mixed HEAD~1
-```
-
-Undo last commit and discard changes:
-```bash
-git reset --hard HEAD~1
-```
-
----
 
 ## 🔀 Branching
 
@@ -186,31 +146,6 @@ git add .
 git commit
 ```
 
----
-
-## 🌐 Remote Repositories
-
-Add a remote repository:
-```bash
-git remote add origin https://github.com/username/repo.git
-# or (SSH)
-git remote add origin git@github.com:username/repo.git
-```
-
-Check remotes:
-```bash
-git remote -v
-```
-
-Remove a remote:
-```bash
-git remote remove origin
-```
-
-Rename a remote:
-```bash
-git remote rename origin new-name
-```
 
 ---
 
@@ -232,134 +167,6 @@ Fetch changes (without merging):
 git fetch
 ```
 
----
-
-## 🔑 GitHub SSH Setup (Optional)
-
-Generate SSH key:
-```bash
-ssh-keygen -t ed25519 -C "your.email@example.com"
-```
-
-Add SSH key to agent:
-```bash
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
-```
-
-Copy key to clipboard:
-```bash
-cat ~/.ssh/id_ed25519.pub
-```
-
-Add it to GitHub → Settings → SSH and GPG Keys → New SSH Key.
-
-Test connection:
-```bash
-ssh -T git@github.com
-```
-
----
-
-## 🧹 Cleaning Up
-
-Remove untracked files (dry run):
-```bash
-git clean -n
-```
-
-Remove untracked files:
-```bash
-git clean -f
-```
-
----
-
-## 🔐 Stashing Changes
-
-Temporarily save changes:
-```bash
-git stash
-```
-
-List all stashes:
-```bash
-git stash list
-```
-
-Apply latest stash:
-```bash
-git stash apply
-```
-
-Apply and delete:
-```bash
-git stash pop
-```
-
-Drop specific stash:
-```bash
-git stash drop stash@{0}
-```
-
-Clear all stashes:
-```bash
-git stash clear
-```
-
----
-
-## 🧪 Tags
-
-Create a tag:
-```bash
-git tag v1.0
-```
-
-Create annotated tag:
-```bash
-git tag -a v1.0 -m "Version 1.0"
-```
-
-Push a tag:
-```bash
-git push origin v1.0
-```
-
-List all tags:
-```bash
-git tag
-```
-
-Delete a tag:
-```bash
-git tag -d v1.0
-```
-
-Delete remote tag:
-```bash
-git push origin --delete tag v1.0
-```
-
----
-
-## 📦 Submodules
-
-Add a Git submodule:
-```bash
-git submodule add https://github.com/username/repo.git path/
-```
-
-Initialize submodules:
-```bash
-git submodule init
-git submodule update
-```
-
-Clone repo with submodules:
-```bash
-git clone --recurse-submodules <repo-url>
-```
 
 ---
 
@@ -380,16 +187,3 @@ Check which branch you're on:
 git branch --show-current
 ```
 
----
-
-## 📚 Additional Tips
-
-- Use `.gitignore` to prevent committing unwanted files.
-- Always pull before you push to avoid merge conflicts.
-- Commit often with clear messages.
-- Use branches for features and bug fixes.
-- Use SSH for secure communication with GitHub.
-
----
-
-> Made with 💻 by a Git enthusiast.
